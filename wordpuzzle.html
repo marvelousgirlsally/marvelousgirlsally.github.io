@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>Zian's puzzle</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styleforwordpuzzle.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Main content -->
+  <h1><b>Zian's puzzle</b><br/></h1>
+  <p1 id="sayHello"></p1>
+
+  <p2>This is a web robot. It can talk to you based on what you respond to it. Here are some recommended topics. Try it!</p2>
+
+  <script>
+
+    var yourName = prompt("Hello! Nice to meet you! What is your name?");
+
+    if(yourName !=null){
+      document.getElementById("sayHello").innerHTML = "Hello " + yourName + ". Welcome to my page!"
+    } else {
+      alert("Are you trying to escape? Please refresh and enter a name.")
+    }
+
+    function compute_x_minus_y(x,y) { 
+    var z = 0;
+    x = parseInt(x);
+    y = parseInt(y);
+    z = x - y;
+    return z;
+  }
+
+    function ask_for_x_n_y() { 
+      var x = prompt("Enter your age");
+      var y = prompt("Enter the month of your birthday");
+      var z = compute_x_minus_y(x,y);
+      var x = document.getElementById("demo"); 
+      x.style.fontSize = "25px"; 
+      x.style.color = "#600223"; 
+      document.getElementById("demo").innerHTML = "Your lucky number is " + z + "."; 
+    }
+
+    function disp_prompt(){
+      var name=prompt("What is your favourite animal?")
+      if (name!=null && name!="")
+    {
+    document.getElementById("demo").innerHTML =("Wow. You love " + name + "! Good to know!")
+    }
+    }
+
+    function compute_2018_minus_x(x){
+      var z = 0;
+      x = parseInt(x);
+      z = 2018 - x;
+      return z;
+    }
+
+    function ask_for_x(){
+      var x = prompt("Enter the year you born");
+      var z = compute_2018_minus_x(x);
+      var x = document.getElementById("demo"); 
+      x.style.fontSize = "25px"; 
+      x.style.color = "#600223"; 
+      document.getElementById("demo").innerHTML = "Your age is " + z + "."; 
+    }
+
+    $(document).ready(function(){
+      $("button#hide_p").on('click',function(){
+          $("p").hide(300);
+      });
+      $("button#show_p").on('click',function(){
+          $("p").show(300);
+      });
+    });
+  </script>
+
+
+  <p id="demo"></p>
+
+
+   <br>
+   <button type="button" class="btn btn-danger" onclick="ask_for_x();">Your age</button>
+   <button type="button" class="btn btn-warning" onclick="disp_prompt();">Your favourite animal</button>
+   <button type="button" class="btn btn-success" onclick="ask_for_x_n_y();">Your lucky number</button>
+   <button type="button" class="btn btn-primary" id="hide_p">Hide the respond</button>
+   <button type="button" class="btn btn-primary" id="show_p">Show the respond</button>
+
+</body>
+</html>
