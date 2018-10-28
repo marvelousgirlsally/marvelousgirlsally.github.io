@@ -1,0 +1,16 @@
+body {
+    padding-left: 8em;
+    padding-top:2em;
+    color: #600223;
+    background-color: #f9decc;
+    font-family: American Typewriter, Charlemagnestd, Arial,
+     SunSans-Regular, sans-serif;}
+
+h1 {font-size: 40px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+p1 {font-size: 25px;
+}
+p2 {font-size:25px;
+}
