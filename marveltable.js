@@ -8,13 +8,13 @@ $(document).ready(function(){
        $.getJSON(airtable_read_endpoint, function(result) {
               $.each(result.records, function(key,value) {
                   table1_items = [];
-                      table1_items.push(value.fields.Films_Name);
+                      table1_items.push(value.fields.Film_Name);
                       table1_items.push(value.fields.US_Release_Date);
                       table1_items.push(value.fields.Production_Company);
-                      table1_items.push(value.fields.Distributed_By);
+                      table1_items.push(value.fields.Distributed_by);
                       table1_items.push(value.fields.Budget);
                       table1_items.push(value.fields.Box_Office);
-                      table1_items.push(value.fields.Accounting_Rate_Of_Return);
+                      table1_items.push(value.fields.Accounting_Rate_of_Return);
                       table1_dataSet.push(table1_items);
                       console.log(table1_items);
                }); // end .each
@@ -24,13 +24,13 @@ $(document).ready(function(){
                 data: table1_dataSet,
                 retrieve: true,
                 columns: [
-                    { title: "Films Name",
+                    { title: "Film Name",
                       defaultContent:""},
-                    { title: "U.S Release Date",
+                    { title: "US Release Date",
                         defaultContent:"" },
                     { title: "Production Company",
                       defaultContent:"" },
-                    { title: "Distributed By",
+                    { title: "Distributed by",
                       defaultContent:""},
                     { title: "Budget",
                         defaultContent:""},
@@ -45,13 +45,13 @@ $(document).ready(function(){
          var table2_items = [];
          var i = 0;
          var airtable_read_endpoint =
-         "https://api.airtable.com/v0/appM38HXlEVhxmnqx/Stage?api_key=keyTcsTzckqyBTlk8&view=Grid%20view";
+         "https://api.airtable.com/v0/appI7ru06MduSm8Ux/Films?api_key=key6NO7hKMS69ECMu&maxRecords=21&view=Marvel%20Firm%20Grid%20View";
          var table2_dataSet = [];
          $.getJSON(airtable_read_endpoint, function(result) {
                 $.each(result.records, function(key,value) {
                     table2_items = [];
-                        table2_items.push(value.fields.Name);
-                        table2_items.push(value.fields.Total_Entries);
+                        table2_items.push(value.fields.Film_Name);
+                        table2_items.push(value.fields.Box_Office);
                         table2_dataSet.push(table2_items);
                         console.log(table2_items);
                  }); // end .each
@@ -61,9 +61,9 @@ $(document).ready(function(){
                     retrieve: true,
                     ordering: false,
                     columns: [
-                        { title: "Name",
+                        { title: "Film Name",
                           defaultContent:""},
-                        { title: "Total Entries",
+                        { title: "Box Office",
                           defaultContent:""},
                     ] // rmf columns
                 } ); // end dataTable
