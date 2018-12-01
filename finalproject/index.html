@@ -7,21 +7,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
 <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js"></script>
 
-<!-- Load c3.css -->
-<link href="/path/to/c3.css" rel="stylesheet">
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<!-- Responsive Stylesheet File -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" rel="stylesheet" type="text/css">
 
-<!-- Load d3.js and c3.js -->
-<script src="/path/to/d3.v5.min.js" charset="utf-8"></script>
-<script src="/path/to/c3.min.js"></script>
-
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WQ8SLP6');</script>
-  <!-- End Google Tag Manager -->
 
   <title>香港家居用品購物指南</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -80,8 +71,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li class="menu-active"><a href="#hero">主页</a></li>
           <li><a href="#about">簡介</a></li>
           <li><a href="#services">品牌情報</a></li>
-          <li><a href="#portfolio">折扣情報</a></li>
-          <li><a href="#team">加入我们</a></li>
+          <li><a href="#portfolio">店舖詳情</a></li>
+          <li><a href="#team">購物地圖</a></li>
           <li class="menu-has-children"><a href="">交通情報</a>
             <ul>
               <li><a href="http://www.mtr.com.hk/ch/customer/services/system_map.html" target="_blank">港鐵路線圖</a></li>
@@ -99,7 +90,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li>
-          <li><a href="#contact">購物地圖</a></li>
+          <li><a href="#map">購物地圖</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -110,8 +101,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   ============================-->
   <section id="hero">
     <div class="hero-container">
-      <h1>欢迎来到家居港</h1>
-      <h2>我們為您提供香港本地最經濟最優質的家居用品購物信息</h2>
+      <h1>歡迎來到家居港</h1>
+      <h2>我們為您推薦香港精品家居購物點 幫您打造完美精緻生活</h2>
       <a href="#about" class="btn-get-started">點擊查看</a>
     </div>
   </section><!-- #hero -->
@@ -275,14 +266,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="section-description">以下为三大網站平台上關於所選取家居品牌的評論數據及热度分布</p>
         </div>
 
-        <div id="chart"></div>
-        <div class="table-responsive">
-        <table id="table1" width="100%" class="table table-bordered"></table>
-      </div>
+        <div id="container" style="width:100%; height:400px;"></div>
+        <div id="container1" style="width:100%; height:400px;"></div>
+        <div id="container2" style="width:100%; height:400px;"></div>
     </div>
 
      </section>
 
+      </section>
+
+      <section id="portfolio">
+        <div class="container wow fadeIn">
+          <div class="section-header">
+            <h3 class="section-title">店舖詳情</h3>
+            <p class="section-description">以下为所選取家居品牌的店舖風格及詳情</p>
+          </div>
+        </section>
     <!--==========================
     Call To Action Section
     ============================-->
@@ -290,11 +289,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="container wow fadeIn">
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
-            <h3 class="cta-title">Call To Action</h3>
-            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h3 class="cta-title">家裝靈感</h3>
+            <p class="cta-text"> 家居港相信沒有標準的完美家居，因為家居應該反映你的獨特風格，即使所費無幾，也能展現您喜歡的布置、滿足你的需要，令你感到輕鬆自在。因此，我們搜羅數之不盡的家居布置靈感，幫助您擁有夢寐以求的家。</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
+            <a class="cta-btn align-middle" href="https://www.houzz.com/photos" target="_blank">點擊獲取</a>
           </div>
         </div>
 
@@ -522,7 +521,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!--==========================
       Contact Section
     ============================-->
-    <div class="section-header">
+    <section id="map">
+    <div style= "padding-top: 5em;" class="section-header">
     <h3 class="section-title">購物地圖</h3>
     <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
       <div style= "text-align: center; padding-bottom: 2em;"><button type="button" class="btn btn-warning" id='roll_up' onclick="show_districts();">查看地點</button><br></div>
@@ -596,6 +596,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
       </div>
+    </section>
     </section><!-- #contact -->
 
   </main>
@@ -627,7 +628,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-  <script src='test.js'></script>
+  <script src='barchart.js'></script>
 
   <script>
     var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href=" ">OpenStreetMap</a >', maxZoom: 18,})

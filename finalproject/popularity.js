@@ -34,7 +34,7 @@ $.getJSON(airtable_read_endpoint, function(result) {
 
        var chart = c3.generate({
             data: {
-                columns: table2_dataSet,
+                columns: table1_dataSet,
                 type : 'bar'
             },
             bar: {
